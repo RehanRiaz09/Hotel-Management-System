@@ -1,0 +1,11 @@
+const express = require("express");
+const routes = express.Router();
+const mongoose = require("mongoose");
+const Room = require ("../model/room");
+const { getAllRoom, createRoom, getRoomById, updateRoom, deleteRoom } = require("../controller/rooms");
+routes.get("/", getAllRoom);
+routes.post("/", createRoom);
+routes.get("/:roomId", getRoomById);
+routes.patch("/:roomId", updateRoom);
+routes.delete("/:roomId", deleteRoom);
+module.exports = routes;

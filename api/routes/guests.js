@@ -1,0 +1,11 @@
+const express = require("express");
+const routes = express.Router();
+const mongoose = require("mongoose");
+const Guest = require ("../model/guest");
+const { getAllGuest, createGuest, getGuestById, updateGuest, deleteGuest } = require("../controller/guests");
+routes.get("/", getAllGuest);
+routes.post("/", createGuest);
+routes.get("/:guestId", getGuestById);
+routes.patch("/:guestId", updateGuest);
+routes.delete("/:guestId", deleteGuest);
+module.exports = routes;
